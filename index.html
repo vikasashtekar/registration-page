@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input{
+          width: 100%;
+          padding: 10px;
+        }
+        #registration-form {
+            max-width: 600px;
+            margin: 50px auto;
+            border: 2px solid black;
+            padding: 40px;
+            background: linear-gradient(aqua,rgb(95, 137, 228));
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #a13737;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        #output{
+          background-color: aliceblue;
+        }
+    </style>
+    <title>Registration Form</title>
+</head>
+<body>
+
+<div id="registration-form">
+    <h3>Registration Form</h3>
+    <form id="regForm">
+        <div>
+          <label for="name">Name:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+        </div>
+        <div>
+            <label for="studentID">Student ID:</label>
+            <input type="text" id="Student_Id">
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone">
+        </div>
+        <div>
+            <label for="Address">Address:</label>
+            <input type="text" id="Address">
+        </div>
+        <br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <h3>Registered Users</h3>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Student_Id</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
+</div>
+
+<script>
+    function submitForm() {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let Student_Id = document.getElementById('Student_Id').value;
+        let phone = document.getElementById('phone').value;
+        let Address = document.getElementById('Address').value;
+
+        let table = document.getElementById('output');
+    table.innerHTML += `
+        <tr>
+            <td>${name}</td>
+            <td>${email}</td>
+            <td>${Student_Id}</td>
+            <td>${phone}</td>
+            <td>${Address}</td>
+        </tr>
+    `;
+  }
+</script>
+
+</body>
+</html>
